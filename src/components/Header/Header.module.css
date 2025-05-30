@@ -3,6 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+  position: relative;
+  z-index: 1000;
 }
 
 .logo {
@@ -16,14 +18,98 @@
   border-radius: 6px;
 }
 
-nav a {
-  margin-left: 1.5rem;
+/* Nav Desktop */
+.navDesktop {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navDesktop a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: var(--text);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
-nav a:hover {
+.navDesktop a:hover {
   color: var(--primary);
+}
+
+/* Botão do menu hamburguer (mobile) */
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* Menu Mobile */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background: var(--primary); /* TODO: mudar isso*/
+  line-height: 1; /* <- isso remove o espaçamento vertical */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: left 0.3s ease-in-out;
+  z-index: 1001;
+}
+
+.mobileMenu.open {
+  left: 0;
+}
+
+.mobileMenu a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text); /* TODO: mudar isso*/
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.25rem;
+  transition: color 0.3s;
+}
+
+.mobileMenu a:hover {
+  color: var(--primary);
+}
+
+/* Botão de fechar */
+.closeButton {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* Overlay escurecido */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navDesktop {
+    display: none;
+  }
+
+  .menuButton {
+    display: block;
+  }
 }
