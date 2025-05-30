@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.logo span {
+  background-color: var(--primary);
+  color: #000;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
