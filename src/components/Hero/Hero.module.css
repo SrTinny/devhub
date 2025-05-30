@@ -1,16 +1,77 @@
 .hero {
-  text-align: center;
-  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 10rem;
+  gap: 3rem;
+  flex-wrap: wrap;
+  background-color: #000;
+  color: #fff;
 }
 
-.hero h1 {
+.text {
+  flex: 1;
+  min-width: 320px;
+}
+
+.text h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
 
-.hero p {
+.text p {
   font-size: 1.2rem;
-  color: var(--text-light);
+  margin-bottom: 1.5rem;
   max-width: 600px;
-  margin: 0 auto;
+}
+
+.services {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+.services li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.buttons button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #0056b3;
+}
+
+.secondary {
+  background-color: #444;
+}
+
+.secondary:hover {
+  background-color: #222;
+}
+
+.image {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
 }
