@@ -13,7 +13,9 @@ function ContactForm() {
           placeholder="Descreva seu pedido..."
           required
         />
-        <button type="submit">Enviar Pedido</button>
+        <button className={styles.submitForm} type="submit">
+          Enviar Pedido
+        </button>
       </form>
     </section>
   );
