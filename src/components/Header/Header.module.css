@@ -2,13 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 10rem;
   position: relative;
   z-index: 1000;
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .logo span {
@@ -32,6 +32,8 @@
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
 }
 
 .navDesktop a:hover {
@@ -43,7 +45,7 @@
   display: none;
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 3rem;
   cursor: pointer;
   color: var(--text);
 }
