@@ -12,7 +12,7 @@ const services = [
   },
   {
     icon: iconWeb,
-    title: "Desenvolvimento Web",
+    title: "Projetos Web",
     desc: "Sites rápidos, responsivos e com design único para sua marca se destacar.",
   },
   {
@@ -27,14 +27,14 @@ const services = [
   },
 ];
 
-
 function Services() {
   return (
     <section className={styles.servicesSection} id="servicos">
       <div className={styles.header}>
         <h2>Nossos Serviços</h2>
         <p>
-          Descubra nossas soluções criativas e tecnológicas pensadas sob medida para transformar ideias em resultados.
+          Descubra nossas soluções criativas e tecnológicas pensadas sob medida
+          para transformar ideias em resultados.
         </p>
       </div>
 
@@ -50,6 +50,5 @@ function Services() {
     </section>
   );
 }
-
 
 export default Services;
