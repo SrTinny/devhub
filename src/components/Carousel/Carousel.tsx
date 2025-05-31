@@ -59,7 +59,7 @@ export default function Carousel() {
   };
 
   return (
-    <section className={styles.carouselSection}>
+    <section className={styles.carouselSection} id="projetos">
       <h2 className={styles.title}>Projetos Recentes</h2>
       <div className={styles.carouselContainer}>
         <button onClick={handlePrev} className={styles.navButton}>
