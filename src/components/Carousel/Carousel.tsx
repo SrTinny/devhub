@@ -5,39 +5,39 @@ import styles from "./Carousel.module.css";
 const projetos = [
   {
     titulo: "Site Portfólio",
-    imagem: "../../assets/test1.png",
-    link: "https://meusite.com/portfolio"
+    imagem: "./src/assets/test1.png",
+    link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
-    imagem: "../../assets/test1.png",
-    link: "https://meusite.com/portfolio"
+    imagem: "./src/assets/test1.png",
+    link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
-    imagem: "../../assets/test1.png",
-    link: "https://meusite.com/portfolio"
+    imagem: "./src/assets/test1.png",
+    link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
-    imagem: "../../assets/test1.png",
-    link: "https://meusite.com/portfolio"
+    imagem: "./src/assets/test1.png",
+    link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
-    imagem: "../../assets/test1.png",
-    link: "https://meusite.com/portfolio"
+    imagem: "./src/assets/test1.png",
+    link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
-    imagem: "../../assets/test1.png",
-    link: "https://meusite.com/portfolio"
+    imagem: "./src/assets/test1.png",
+    link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
-    imagem: "../../assets/test1.png",
-    link: "https://meusite.com/portfolio"
-  }
+    imagem: "./src/assets/test1.png",
+    link: "https://meusite.com/portfolio",
+  },
 ];
 
 export default function Carousel() {
@@ -62,7 +62,9 @@ export default function Carousel() {
     <section className={styles.carouselSection}>
       <h2 className={styles.title}>Projetos Recentes</h2>
       <div className={styles.carouselContainer}>
-        <button onClick={handlePrev} className={styles.navButton}>&larr;</button>
+        <button onClick={handlePrev} className={styles.navButton}>
+          &larr;
+        </button>
 
         <a
           href={projetos[index].link}
@@ -74,7 +76,9 @@ export default function Carousel() {
           <h3>{projetos[index].titulo}</h3>
         </a>
 
-        <button onClick={handleNext} className={styles.navButton}>&rarr;</button>
+        <button onClick={handleNext} className={styles.navButton}>
+          &rarr;
+        </button>
       </div>
     </section>
   );
