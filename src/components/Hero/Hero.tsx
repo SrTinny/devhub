@@ -7,7 +7,8 @@ function Hero() {
       <div className={styles.text}>
         <h1>Conectando criatividade e tecnologia</h1>
         <p>
-          Somos um hub de soluções modernas que integram tecnologia, arte e funcionalidade.
+          Somos um hub de soluções modernas que integram tecnologia, arte e
+          funcionalidade.
         </p>
         <ul className={styles.services}>
           <li>🖥️ Desenvolvimento de sites e sistemas sob medida</li>
@@ -16,8 +17,11 @@ function Hero() {
           <li>🧠 Consultoria criativa e tecnológica</li>
         </ul>
         <div className={styles.buttons}>
-          <button>Fale Conosco</button>
-          <button className={styles.secondary}>Ver Portfólio</button>
+          <a href="#contato">Fale Conosco</a>
+
+          <a className={styles.secondary} href="#projetos">
+            Ver Portfólio
+          </a>
         </div>
       </div>
       <div className={styles.image}>
