@@ -2,9 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 10rem;
-  position: relative;
+  padding: 2rem;
+  position: sticky;
+  top: 0;
   z-index: 1000;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -18,43 +22,26 @@
   border-radius: 6px;
 }
 
-/* Nav Desktop */
+/* Nav Desktop (inicialmente escondido) */
 .navDesktop {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.navDesktop a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-  font-size: 1.25rem;
-  padding: 0.5rem 1rem;
-}
-
-.navDesktop a:hover {
-  color: var(--primary);
+  display: none;
 }
 
 /* Botão do menu hamburguer (mobile) */
 .menuButton {
-  display: none;
+  display: block;
   background: none;
   border: none;
   cursor: pointer;
   color: var(--text);
   width: 48px;
   height: 48px;
+}
 
-  svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
+.menuButton svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 /* Menu Mobile */
@@ -65,8 +52,8 @@
   width: 80%;
   max-width: 300px;
   height: 100vh;
-  background: var(--primary); /* TODO: mudar isso*/
-  line-height: 1; /* <- isso remove o espaçamento vertical */
+  background: var(--primary); /* TODO: mudar isso */
+  line-height: 1;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -83,7 +70,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--text); /* TODO: mudar isso*/
+  color: var(--text); /* TODO: mudar isso */
   text-decoration: none;
   font-weight: 500;
   font-size: 1.25rem;
@@ -112,16 +99,35 @@
   z-index: 1000;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
+/* Estilos para telas maiores (desktop) */
+@media (min-width: 768px) {
   .header {
-    padding: 2rem;
+    padding: 2rem 10rem;
+    position: relative;
   }
+
   .navDesktop {
-    display: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .navDesktop a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .navDesktop a:hover {
+    color: var(--primary);
   }
 
   .menuButton {
-    display: block;
+    display: none;
   }
 }
