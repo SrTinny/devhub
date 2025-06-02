@@ -24,6 +24,18 @@
   width: 100px;
   height: 100px;
   margin-bottom: 1rem;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  will-change: transform, filter;
+}
+
+.card:hover .icon {
+  animation: bounceGlow 0.6s ease forwards;
+}
+
+@keyframes bounceGlow {
+  0% { transform: scale(1); filter: none; }
+  50% { transform: scale(1.2); filter: drop-shadow(0 0 8px #2985c8cc); }
+  100% { transform: scale(1.1); filter: drop-shadow(0 0 4px #2985c8); }
 }
 
 .card h3 {
