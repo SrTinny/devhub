@@ -5,7 +5,7 @@ function Hero() {
     <section className={styles.hero}>
       <div className={styles.text}>
         <h1>
-          Conectando criatividade e <span>tecnologia.</span>
+          Conectando Criatividade e <span>Tecnologia.</span>
         </h1>
         <p>
           Somos um hub de soluções modernas que integram tecnologia, arte e
