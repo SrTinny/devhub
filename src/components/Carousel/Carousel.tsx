@@ -5,37 +5,37 @@ import styles from "./Carousel.module.css";
 const projetos = [
   {
     titulo: "Site Portfólio",
-    imagem: "./src/assets/test1.png",
+    imagem: "/assets/test1.png",
     link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
-    imagem: "./src/assets/test1.png",
+    imagem: "/assets/test1.png",
     link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
-    imagem: "./src/assets/test1.png",
+    imagem: "/assets/test1.png",
     link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
-    imagem: "./src/assets/test1.png",
+    imagem: "/assets/test1.png",
     link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
-    imagem: "./src/assets/test1.png",
+    imagem: "/assets/test1.png",
     link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
-    imagem: "./src/assets/test1.png",
+    imagem: "/assets/test1.png",
     link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
-    imagem: "./src/assets/test1.png",
+    imagem: "/assets/test1.png",
     link: "https://meusite.com/portfolio",
   },
 ];
