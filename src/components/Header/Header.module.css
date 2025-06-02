@@ -49,8 +49,8 @@
   position: fixed;
   top: 0;
   left: -100%;
-  width: 80%;
-  max-width: 300px;
+  width: 100vw;
+  /*max-width: 300px;*/
   height: 100vh;
   background: var(--primary); /* TODO: mudar isso */
   line-height: 1;
@@ -70,6 +70,8 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  justify-content: center;
+  margin: 2rem;
   color: var(--text); /* TODO: mudar isso */
   text-decoration: none;
   font-weight: 500;
@@ -97,9 +99,7 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
   z-index: 1000;
-}
-
-/* Estilos para telas maiores (desktop) */
+} /* Estilos para telas maiores (desktop) */
 @media (min-width: 768px) {
   .header {
     padding: 2rem 10rem;
