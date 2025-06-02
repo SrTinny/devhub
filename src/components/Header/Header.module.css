@@ -130,4 +130,9 @@
   .menuButton {
     display: none;
   }
+  .mobileMenu,
+  .mobileMenu.open,
+  .overlay {
+    display: none !important;
+  }
 }
