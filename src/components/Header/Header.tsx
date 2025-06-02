@@ -11,7 +11,7 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        Dev<span>hub</span>
+        Dev<span className={styles.logoFlip}>hub</span>
       </div>
 
       <nav className={styles.navDesktop}>
