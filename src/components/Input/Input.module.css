@@ -1,0 +1,53 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffd700; /* Amarelo */
+}
+
+.asterisk {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  background-color: #1e1e2f; /* Fundo escuro */
+  border: 1px solid #00ffff; /* Azul ciano claro */
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  transition: border 0.2s;
+}
+
+.icon {
+  color: white;
+  font-size: 1.1rem;
+  margin-right: 0.6rem;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+.error {
+  border-color: red;
+}
+
+.errorText {
+  color: red;
+  font-size: 0.85rem;
+}
