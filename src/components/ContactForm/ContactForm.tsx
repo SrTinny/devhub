@@ -1,27 +1,28 @@
 import styles from "./ContactForm.module.css";
 import Input from "../Input/Input";
-import { FaUser } from "react-icons/fa";
+import { FaUser, FaPhone, FaEnvelope } from "react-icons/fa";
 
 function ContactForm() {
   return (
     <section className={styles.contact} id="contato">
       <h2>Fale com a gente</h2>
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form>
+        <Input label="Nome" placeholder="Seu Nome" icon={<FaUser />} required />
         <Input
-          label="Nome"
-          placeholder="Digite seu Nome"
-          icon={<FaUser />}
+          label="Telefone"
+          placeholder="Seu Telefone"
+          icon={<FaPhone />}
+          type="tel"
+          required
+        />
+        <Input
+          label="Email"
+          placeholder="Seu Email"
+          icon={<FaEnvelope />}
+          type="email"
           required
         />
 
-        <input type="text" name="nome" placeholder="Seu nome" required />
-        <input type="email" name="email" placeholder="Seu e-mail" required />
-        <textarea
-          name="mensagem"
-          rows={5}
-          placeholder="Descreva seu pedido..."
-          required
-        />
         <button className={styles.submitForm} type="submit">
           Enviar Pedido
         </button>
