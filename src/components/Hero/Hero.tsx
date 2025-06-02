@@ -1,11 +1,12 @@
 import styles from "./Hero.module.css";
-import heroImage from "../../assets/heroimage.png";
 
 function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.text}>
-        <h1>Conectando criatividade e tecnologia</h1>
+        <h1>
+          Conectando criatividade e <span>tecnologia.</span>
+        </h1>
         <p>
           Somos um hub de soluções modernas que integram tecnologia, arte e
           funcionalidade.
@@ -24,9 +25,7 @@ function Hero() {
           </a>
         </div>
       </div>
-      <div className={styles.image}>
-        <img src={heroImage} alt="Pessoa programando" />
-      </div>
+      <div className={styles.image}></div>
     </section>
   );
 }
