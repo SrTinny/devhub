@@ -108,28 +108,43 @@
 
   .navDesktop {
     display: flex;
-    gap: 1.5rem;
+    gap: 3rem;
   }
-
   .navDesktop a {
+    position: relative;
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
     color: var(--text);
-    text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    text-decoration: none;
     font-size: 1.25rem;
-    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+    align-items: center;
+    padding: 3px 0;
+    gap: 0.25rem;
   }
 
+  .navDesktop a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+  }
+
+  .navDesktop a:hover::after {
+    width: 100%;
+  }
   .navDesktop a:hover {
     color: var(--primary);
+    transition: all 0.3s ease;
   }
-
   .menuButton {
     display: none;
   }
+
   .mobileMenu,
   .mobileMenu.open,
   .overlay {
