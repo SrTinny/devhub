@@ -19,6 +19,56 @@
   }
 }
 
+/* Aplica apenas no texto principal */
+.text h1 span:not(.dot) {
+  color: var(--primary);
+  display: inline-block;
+  animation: pulseFade 1.5s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.7s;
+}
+
+.dot {
+  font-weight: bold;
+  font-size: 2.5rem;
+  display: inline-block;
+  width: 1ch;
+  color: var(--primary);
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes pulseFade {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.tech {
+  display: inline-block;
+  position: relative;
+}
+
+.dot {
+  display: inline-block;
+  width: 1ch;
+  color: var(--primary);
+  animation: blink 1s steps(2, start) infinite;
+}
+
 .text p {
   font-size: 1rem;
   margin-bottom: 1.5rem;
@@ -49,8 +99,16 @@
   background-color: #2985c8;
   color: white;
   cursor: pointer;
+  animation: float 4s ease-in-out infinite;
   transition: background-color 0.3s;
   text-decoration: none;
+  
+}
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 
 .buttons a:hover {
@@ -77,6 +135,41 @@
   border-radius: 8px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 }
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.text {
+  animation: fadeSlideUp 1s ease-out forwards;
+  opacity: 0; /* garante que começa invisível até a animação acontecer */
+  animation-delay: 0.3s;
+}
+
+.image {
+  animation: fadeSlideRight 1.2s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+}
+
 
 /* 🌐 Estilos para telas maiores (desktop) */
 @media (min-width: 768px) {
