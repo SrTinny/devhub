@@ -1,8 +1,8 @@
 import styles from "./Services.module.css";
-import iconImpressao from "../../assets/icon-impressao.png";
-import iconWeb from "../../assets/icon-web.png";
-import iconSoftware from "../../assets/icon-software.png";
-import iconMoveis from "../../assets/icon-moveis.png";
+import iconImpressao from "../../assets/icon-impressao.svg";
+import iconWeb from "../../assets/icon-web.svg";
+import iconSoftware from "../../assets/icon-software.svg";
+import iconMoveis from "../../assets/icon-moveis.svg";
 
 const services = [
   {
