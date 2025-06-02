@@ -8,7 +8,8 @@
 .label {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #ffd700; /* Amarelo */
+  color: white;
+  text-align: start;
 }
 
 .asterisk {
@@ -19,8 +20,8 @@
 .inputContainer {
   display: flex;
   align-items: center;
-  background-color: #1e1e2f; /* Fundo escuro */
-  border: 1px solid #00ffff; /* Azul ciano claro */
+  background-color: transparent;
+  border: 1px solid var(--primary);
   border-radius: 6px;
   padding: 0.6rem 0.8rem;
   transition: border 0.2s;
