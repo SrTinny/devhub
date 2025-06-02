@@ -4,38 +4,21 @@ import styles from "./Carousel.module.css";
 
 const projetos = [
   {
-    titulo: "Site Portfólio",
+    titulo: "iFestify",
     imagem: "/assets/test1.png",
+    descricao: "Exemplo de Descrição.",
+    link: "https://meusite.com/portfolio",
+  },
+  {
+    titulo: "ViaTopic",
+    imagem: "/assets/test1.png",
+    descricao: "Exemplo de Descrição.",
     link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
     imagem: "/assets/test1.png",
-    link: "https://meusite.com/portfolio",
-  },
-  {
-    titulo: "Site Portfólio",
-    imagem: "/assets/test1.png",
-    link: "https://meusite.com/portfolio",
-  },
-  {
-    titulo: "Site Portfólio",
-    imagem: "/assets/test1.png",
-    link: "https://meusite.com/portfolio",
-  },
-  {
-    titulo: "Site Portfólio",
-    imagem: "/assets/test1.png",
-    link: "https://meusite.com/portfolio",
-  },
-  {
-    titulo: "Site Portfólio",
-    imagem: "/assets/test1.png",
-    link: "https://meusite.com/portfolio",
-  },
-  {
-    titulo: "Site Portfólio",
-    imagem: "/assets/test1.png",
+    descricao: "Exemplo de Descrição.",
     link: "https://meusite.com/portfolio",
   },
 ];
@@ -74,6 +57,7 @@ export default function Carousel() {
         >
           <img src={projetos[index].imagem} alt={projetos[index].titulo} />
           <h3>{projetos[index].titulo}</h3>
+          <p className={styles.descricao}>{projetos[index].descricao}</p>
         </a>
 
         <button onClick={handleNext} className={styles.navButton}>

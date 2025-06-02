@@ -51,6 +51,12 @@
   font-size: 1.4rem;
   color: #007bff;
 }
+.descricao {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-top: 0.5rem;
+  text-align: center;
+}
 
 .navButton {
   background: none;
