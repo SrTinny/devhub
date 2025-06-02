@@ -13,13 +13,29 @@
 
 .logo {
   font-size: 2rem;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.logo span {
+.logoFlip {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  color: var(--primary); /* texto azul */
+  border-radius: 6px;
+  background-color: transparent;
+  transition: all 0.4s ease;
+  transform-origin: center;
+  transform: rotateX(360deg);
+}
+
+/* Efeito de hover suave sem sumir */
+.logo:hover .logoFlip {
   background-color: var(--primary);
   color: #000;
-  padding: 0.2rem 0.5rem;
-  border-radius: 6px;
+  transform: rotateX(0deg);
+  transition: all 0.4s ease;
 }
 
 /* Nav Desktop (inicialmente escondido) */
