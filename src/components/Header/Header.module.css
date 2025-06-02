@@ -12,12 +12,19 @@
 }
 
 .logo {
-  font-size: 2rem;
   display: flex;
   align-items: center;
   font-weight: bold;
   cursor: pointer;
   user-select: none;
+
+  a {
+    text-decoration: none;
+  }
+  h2 {
+    color: white;
+    font-size: 2rem;
+  }
 }
 
 .logoFlip {

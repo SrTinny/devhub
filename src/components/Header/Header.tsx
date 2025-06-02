@@ -11,7 +11,11 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        Dev<span className={styles.logoFlip}>hub</span>
+        <a href="#">
+          <h2>
+            Dev<span className={styles.logoFlip}>hub</span>
+          </h2>
+        </a>
       </div>
 
       <nav className={styles.navDesktop}>
