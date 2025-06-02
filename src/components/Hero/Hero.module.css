@@ -62,7 +62,7 @@
 }
 
 .image {
-  display: flex;
+  display: none;
   justify-content: center;
 }
 
@@ -97,5 +97,8 @@
   .buttons {
     flex-direction: row;
     justify-content: flex-start;
+  }
+  .image {
+    display: flex;
   }
 }
