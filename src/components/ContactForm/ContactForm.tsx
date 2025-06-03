@@ -5,7 +5,9 @@ import { FaUser, FaPhone, FaEnvelope } from "react-icons/fa";
 function ContactForm() {
   return (
     <section className={styles.contact} id="contato">
-      <h2>Fale com a gente</h2>
+      <h2>
+        Entre em <span>Contato.</span>
+      </h2>
       <form>
         <Input label="Nome" placeholder="Seu Nome" icon={<FaUser />} required />
         <Input
