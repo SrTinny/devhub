@@ -12,9 +12,9 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.logo}>
         <a href="#">
-          <h2>
+          <h1>
             Dev<span className={styles.logoFlip}>hub</span>
-          </h2>
+          </h1>
         </a>
       </div>
 
