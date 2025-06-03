@@ -7,7 +7,7 @@ function Hero() {
         <h2>
           Conectando Criatividade e{" "}
           <span className={styles.tech}>
-            Tecnologia<span className={styles.dot}>|</span>
+            Tecnologia.<span className={styles.dot}>|</span>
           </span>
         </h2>
 
