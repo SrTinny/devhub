@@ -76,5 +76,6 @@
 
 .errorText {
   color: red;
+  text-align: left;
   font-size: 0.85rem;
 }
