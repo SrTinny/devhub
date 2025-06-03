@@ -22,9 +22,18 @@ const ContactForm: React.FC = () => {
   });
 
   // Máscara simples de telefone
+  const handleNomeChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setNome(e.target.value);
+
+    if (errors.nome) {
+      setErrors((prev) => ({ ...prev, nome: "" }));
+    }
+  };
+
   const handleTelefoneChange = (e: ChangeEvent<HTMLInputElement>) => {
     const digits = e.target.value.replace(/\D/g, "");
     let formatted = digits;
+
     if (digits.length > 2) {
       formatted = `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
     }
@@ -34,15 +43,29 @@ const ContactForm: React.FC = () => {
         11
       )}`;
     }
+
     setTelefone(formatted);
+
+    if (errors.telefone) {
+      setErrors((prev) => ({ ...prev, telefone: "" }));
+    }
   };
 
-  const handleNomeChange = (e: ChangeEvent<HTMLInputElement>) =>
-    setNome(e.target.value);
-  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) =>
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
-  const handlePedidoChange = (e: ChangeEvent<HTMLTextAreaElement>) =>
+
+    if (errors.email) {
+      setErrors((prev) => ({ ...prev, email: "" }));
+    }
+  };
+
+  const handlePedidoChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setPedido(e.target.value);
+
+    if (errors.pedido) {
+      setErrors((prev) => ({ ...prev, pedido: "" }));
+    }
+  };
 
   // Validação completa com mensagens
   const isFormValid = () => {
