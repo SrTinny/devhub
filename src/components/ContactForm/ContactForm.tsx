@@ -1,6 +1,7 @@
 import styles from "./ContactForm.module.css";
 import Input from "../Input/Input";
 import { FaUser, FaPhone, FaEnvelope } from "react-icons/fa";
+import TextArea from "../Input/TextArea";
 
 function ContactForm() {
   return (
@@ -8,8 +9,10 @@ function ContactForm() {
       <h2>
         Entre em <span>Contato</span>
       </h2>
+
       <form>
         <Input label="Nome" placeholder="Seu Nome" icon={<FaUser />} required />
+
         <Input
           label="Telefone"
           placeholder="Seu Telefone"
@@ -17,6 +20,7 @@ function ContactForm() {
           type="tel"
           required
         />
+
         <Input
           label="Email"
           placeholder="Seu Email"
@@ -25,9 +29,18 @@ function ContactForm() {
           required
         />
 
-        <button className={styles.submitForm} type="submit">
-          Enviar Pedido
-        </button>
+        <TextArea
+          label="Pedido"
+          name="pedido"
+          placeholder="Descreva seu pedido"
+          required
+        />
+
+        <div>
+          <button className={styles.submitForm} type="submit">
+            Enviar Pedido
+          </button>
+        </div>
       </form>
     </section>
   );

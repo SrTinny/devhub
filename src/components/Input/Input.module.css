@@ -1,3 +1,6 @@
+/* Input.module.css */
+
+/* ↓ Wrapper e label permanecem iguais ↓ */
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -17,24 +20,27 @@
   margin-left: 0.25rem;
 }
 
+/* ↓ Container com padding reduzido ↓ */
 .inputContainer {
   display: flex;
   align-items: center;
   background-color: transparent;
   border: 1px solid var(--primary);
   border-radius: 6px;
-  padding: 0.6rem 0.8rem;
+  padding: 0.3rem 0.5rem; /* antes era 0.4rem 0.6rem */
   transition: border 0.2s;
 }
 
+/* ↓ Ícone com margem interna reduzida ↓ */
 .icon {
   color: white;
   font-size: 1.1rem;
-  margin-right: 0.6rem;
+  margin-right: 0.3rem; /* antes era 0.4rem */
   display: flex;
   align-items: center;
 }
 
+/* ↓ Input propriamente dito ↓ */
 .input {
   flex: 1;
   border: none;
@@ -42,8 +48,28 @@
   color: white;
   font-size: 1rem;
   outline: none;
+  padding: 0.875rem;
+  /* Se quiser deixar o texto mais “apertado” verticalmente, pode ajustar line-height */
+  line-height: 1.2;
 }
 
+/* ↓ TextArea com altura mínima maior e padding ajustado ↓ */
+.textarea {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  /* Padding vertical ↓ */
+  padding: 0.3rem 0; /* antes era 0.4rem 0 */
+  resize: vertical;
+  /* Aumenta a altura mínima para ficar “menos pequena” ↓ */
+  min-height: 5rem; /* ajuste conforme precisar (ex: 6rem, 8rem) */
+  line-height: 1.3;
+}
+
+/* ↓ Quando há erro, altera só a borda do container ↓ */
 .error {
   border-color: red;
 }
