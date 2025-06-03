@@ -22,32 +22,40 @@
   position: relative;
 }
 
+/* Janela do carrossel */
 .flexCarousel {
   overflow: hidden;
   width: 100%;
 }
 
+/* Track que desliza */
 .carousel {
   display: flex;
   gap: 20px;
   transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+/* ============================= */
+/*  ******** DESKTOP ********    */
+/* ============================= */
+
 .imgPort {
+  /* Largura fixa em 375px + gap de 20px no desktop */
   width: 375px;
   height: 460px;
   background-size: cover;
   background-position: center;
   border-radius: 40px;
-  position: center;
   cursor: pointer;
   transition: background-position 0.8s ease-in-out;
+  position: relative;
 }
 
 .imgPort:hover {
   background-position: 100% 100%;
 }
 
+/* Overlay com título */
 .overlay {
   top: 0;
   left: 0;
@@ -69,6 +77,7 @@
   opacity: 1;
 }
 
+/* Setas */
 .arrowLeft,
 .arrowRight {
   z-index: 1;
@@ -80,7 +89,7 @@
   text-align: center;
   color: var(--primary-color);
   cursor: pointer;
-  border: 2px solid var(--primary);;
+  border: 2px solid var(--primary);
   border-radius: 50%;
   background-color: #111;
   transition: transform 0.3s ease-in-out;
@@ -97,5 +106,20 @@
 .arrowLeft:hover,
 .arrowRight:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 10px cvar(--primary-hover);;
+  box-shadow: 0 0 10px var(--primary-hover);
+}
+
+/* ============================= */
+/*  Media Query para Mobile (<768px) */
+/* ============================= */
+@media (max-width: 768px) {
+
+
+
+  .imgPort {
+    max-width: 100%;
+    flex-shrink: 0;
+  }
+
+
 }
