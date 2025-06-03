@@ -119,7 +119,7 @@ export default function CarrosselProjetos() {
       onMouseLeave={() => setIsPaused(false)}
     >
       <h2 className={styles.titulo}>
-        Nossos <span>Projetos.</span>
+        Nossos <span>Projetos</span>
       </h2>
 
       <div className={styles.interface}>
