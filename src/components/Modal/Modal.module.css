@@ -1,0 +1,95 @@
+/* src/components/Modal/Modal.module.css */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px) brightness(0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  /* Inicia escondido */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background-color: var(--card-bg); /* ex.: #111 */
+  color: var(--primary-hover);
+  border-radius: 10px;
+  padding: 2rem 1rem;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid var(--primary);
+  z-index: 1001;
+
+  /* Inicia “abaixado” e transparente */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.modal h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin: 0 0 1rem;
+}
+
+.modal p {
+  font-size: 1rem;
+  color: var(--text);
+  margin: 0 0 1rem;
+}
+
+.footer {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.btnCancel,
+.btnConfirm {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btnCancel {
+  background-color: var(--bg); /* fundo escuro */
+  color: var(--text);
+  border: 1px solid var(--text-light);
+}
+
+.btnConfirm {
+  background-color: var(--primary);
+  color: var(--text-black);
+}
+
+.btnCancel:hover {
+  background-color: var(--card-bg-hover);
+}
+
+.btnConfirm:hover {
+  background-color: var(--primary-hover);
+}
