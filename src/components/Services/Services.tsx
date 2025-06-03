@@ -31,7 +31,9 @@ function Services() {
   return (
     <section className={styles.servicesSection} id="servicos">
       <div className={styles.header}>
-        <h2>Nossos Serviços</h2>
+        <h2>
+          Nossos <span>Serviços</span>
+        </h2>
         <p>
           Descubra nossas soluções criativas e tecnológicas pensadas sob medida
           para transformar ideias em resultados.
