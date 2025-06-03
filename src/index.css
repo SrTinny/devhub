@@ -27,3 +27,8 @@ body {
   color: var(--text);
 }
 
+h2 {
+  span {
+    color: var(--primary);
+  }
+}
