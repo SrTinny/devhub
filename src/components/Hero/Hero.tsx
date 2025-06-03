@@ -4,12 +4,12 @@ function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.text}>
-        <h1>
+        <h2>
           Conectando Criatividade e{" "}
           <span className={styles.tech}>
             Tecnologia<span className={styles.dot}>|</span>
           </span>
-        </h1>
+        </h2>
 
         <p>
           Somos um hub de soluções modernas que integram tecnologia, arte e

@@ -1,5 +1,5 @@
-// Carousel.tsx
-import { useState, useEffect } from "react";
+// CarrosselProjetos.tsx
+import { useEffect, useState } from "react";
 import styles from "./Carousel.module.css";
 
 const projetos = [
@@ -21,48 +21,84 @@ const projetos = [
     descricao: "Exemplo de Descrição.",
     link: "https://meusite.com/portfolio",
   },
+    {
+    titulo: "Site Portfólio",
+    imagem: "/assets/test1.png",
+    descricao: "Exemplo de Descrição.",
+    link: "https://meusite.com/portfolio",
+  },
+    {
+    titulo: "Site Portfólio",
+    imagem: "/assets/test1.png",
+    descricao: "Exemplo de Descrição.",
+    link: "https://meusite.com/portfolio",
+  },
+    {
+    titulo: "Site Portfólio",
+    imagem: "/assets/test1.png",
+    descricao: "Exemplo de Descrição.",
+    link: "https://meusite.com/portfolio",
+  },
+    {
+    titulo: "Site Portfólio",
+    imagem: "/assets/test1.png",
+    descricao: "Exemplo de Descrição.",
+    link: "https://meusite.com/portfolio",
+  },
 ];
 
-export default function Carousel() {
-  const [index, setIndex] = useState(0);
+export default function CarrosselProjetos() {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % projetos.length);
-    }, 4000);
-    return () => clearInterval(interval);
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % projetos.length);
+    }, 5000);
+    return () => clearInterval(timer);
   }, []);
 
-  const handlePrev = () => {
-    setIndex((prev) => (prev - 1 + projetos.length) % projetos.length);
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % projetos.length);
   };
 
-  const handleNext = () => {
-    setIndex((prev) => (prev + 1) % projetos.length);
+  const handlePrev = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? projetos.length - 1 : prev - 1
+    );
   };
 
   return (
-    <section className={styles.carouselSection} id="projetos">
-      <h2 className={styles.title}>Projetos Recentes</h2>
-      <div className={styles.carouselContainer}>
-        <button onClick={handlePrev} className={styles.navButton}>
-          &larr;
+    <section className={styles.portfolioSection} id="portfolio">
+      <h2 className={styles.titulo}>
+        Nossos <span>Projetos.</span>
+      </h2>
+      <div className={styles.interface}>
+        <button className={styles.arrowLeft} onClick={handlePrev}>
+          <i className="bi bi-caret-left" />
+        </button>
+        <button className={styles.arrowRight} onClick={handleNext}>
+          <i className="bi bi-caret-right" />
         </button>
 
-        <a
-          href={projetos[index].link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.card}
-        >
-          <img src={projetos[index].imagem} alt={projetos[index].titulo} />
-          <h3>{projetos[index].titulo}</h3>
-          <p className={styles.descricao}>{projetos[index].descricao}</p>
-        </a>
-
-        <button onClick={handleNext} className={styles.navButton}>
-          &rarr;
-        </button>
+        <div className={styles.flexCarousel}>
+          <div
+            className={styles.carousel}
+            style={{ transform: `translateX(-${currentIndex * 405}px)` }}
+          >
+            {projetos.map((projeto, idx) => (
+              <a key={idx} href={projeto.link} target="_blank" rel="noreferrer">
+                <div
+                  className={`${styles.imgPort} ${
+                    idx === currentIndex ? styles.currentItem : ""
+                  }`}
+                  style={{ backgroundImage: `url(${projeto.imagem})` }}
+                >
+                  <div className={styles.overlay}>{projeto.titulo}</div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

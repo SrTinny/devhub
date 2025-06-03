@@ -5,10 +5,12 @@
 }
 
 .text {
-  margin-bottom: 2rem;
+  animation: fade-slide-up 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.3s;
 }
 
-.text h1 {
+.text h2 {
   font-size: 3rem;
   font-weight: 600;
   line-height: 1.2;
@@ -20,7 +22,7 @@
 }
 
 /* Aplica apenas no texto principal */
-.text h1 span:not(.dot) {
+.text h2 span:not(.dot) {
   color: var(--primary);
   display: inline-block;
   animation: pulseFade 1.5s ease-out forwards;
