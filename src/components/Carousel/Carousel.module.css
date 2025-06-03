@@ -14,10 +14,6 @@
   margin-bottom: 2rem;
 }
 
-.titulo span {
-  color: var(--primary);
-}
-
 .interface {
   position: relative;
 }
@@ -113,13 +109,8 @@
 /*  Media Query para Mobile (<768px) */
 /* ============================= */
 @media (max-width: 768px) {
-
-
-
   .imgPort {
     max-width: 100%;
     flex-shrink: 0;
   }
-
-
 }
