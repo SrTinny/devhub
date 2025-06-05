@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { FiMenu, FiX, FiHome, FiPhone, FiSettings } from "react-icons/fi";
+import {
+  FiMenu,
+  FiX,
+  FiHome,
+  FiPhone,
+  FiSettings,
+  FiGrid,
+} from "react-icons/fi";
+
 import styles from "./Header.module.css";
 
 function Header() {
@@ -24,6 +32,9 @@ function Header() {
         </a>
         <a href="#servicos">
           <FiSettings /> Serviços
+        </a>
+        <a href="#portfolio">
+          <FiGrid /> Projetos
         </a>
         <a href="#contato">
           <FiPhone /> Contato
@@ -51,6 +62,9 @@ function Header() {
         </a>
         <a href="#servicos" onClick={closeMenu}>
           <FiSettings /> Serviços
+        </a>
+        <a href="#portfolio">
+          <FiGrid /> Projetos
         </a>
         <a href="#contato" onClick={closeMenu}>
           <FiPhone /> Contato
