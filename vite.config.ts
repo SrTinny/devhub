@@ -1,13 +1,15 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import prerender from "vite-plugin-prerender";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { htmlPrerender } from 'vite-plugin-html-prerender'
+import path from 'path'
 
 export default defineConfig({
   plugins: [
     react(),
-    prerender({
-      staticDir: "dist",
-      routes: ["/"],
-    }),
-  ],
-});
+    htmlPrerender({
+      staticDir: path.resolve(__dirname, 'dist'),
+      routes: ['/'],
+      selector: '#root'
+    })
+  ]
+})
