@@ -5,13 +5,14 @@ const projetos = [
   {
     titulo: "iFestify",
     imagem: "/assets/test1.png",
-    descricao: "Exemplo de Descrição.",
+    descricao: "Projeto desenvolvido sobre demanda.",
     link: "https://meusite.com/portfolio",
   },
   {
     titulo: "ViaTopic",
     imagem: "/assets/test1.png",
-    descricao: "Exemplo de Descrição.",
+    descricao:
+      "Projeto desenvolvido para Auxiliar a população de Sobral e região a ter acesso a informação de forma acessivel.",
     link: "https://meusite.com/portfolio",
   },
   {
@@ -54,7 +55,6 @@ export default function CarrosselProjetos() {
 
   const carouselRef = useRef<HTMLDivElement>(null);
 
-
   useEffect(() => {
     function calculateSizes() {
       if (!carouselRef.current) return;
@@ -71,13 +71,11 @@ export default function CarrosselProjetos() {
         const secondRect = items[1].getBoundingClientRect();
         sw = secondRect.left - firstRect.left;
       } else {
-
         sw = firstRect.width;
       }
 
       const containerWidth = carouselRef.current.clientWidth;
       const visibleCount = Math.max(1, Math.floor(containerWidth / sw));
-
 
       const mi =
         projetos.length - visibleCount >= 0
@@ -146,7 +144,12 @@ export default function CarrosselProjetos() {
                     backgroundImage: `url(${projeto.imagem})`,
                   }}
                 >
-                  <div className={styles.overlay}>{projeto.titulo}</div>
+                  <div className={styles.overlay}>
+                    <div>
+                      <h2>{projeto.titulo}</h2>
+                      <p>{projeto.descricao}</p>
+                    </div>
+                  </div>
                 </div>
               </a>
             ))}
