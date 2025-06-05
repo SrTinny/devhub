@@ -5,7 +5,8 @@ const projetos = [
   {
     titulo: "iFestify",
     imagem: "/assets/test1.png",
-    descricao: "Projeto desenvolvido sobre demanda.",
+    descricao:
+      "Projeto desenvolvido sobre demanda para apresentação de um produto.",
     link: "https://meusite.com/portfolio",
   },
   {
