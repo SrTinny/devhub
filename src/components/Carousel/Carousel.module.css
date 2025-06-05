@@ -112,6 +112,10 @@
 /*  Media Query para Mobile (<768px) */
 /* ============================= */
 @media (max-width: 768px) {
+  .flexCarousel {
+    display: flex;
+    justify-content: center;
+  }
   .imgPort {
     width: 100%; /* ocupa toda a largura do contêiner */
     /* calcula a altura mantendo a proporção original de 375×460 */
