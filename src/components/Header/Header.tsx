@@ -63,7 +63,7 @@ function Header() {
         <a href="#servicos" onClick={closeMenu}>
           <FiSettings /> Serviços
         </a>
-        <a href="#portfolio">
+        <a href="#portfolio" onClick={closeMenu}>
           <FiGrid /> Projetos
         </a>
         <a href="#contato" onClick={closeMenu}>
