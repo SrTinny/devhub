@@ -22,6 +22,7 @@
 .flexCarousel {
   overflow: hidden;
   width: calc(395px * 3);
+  justify-self: center;
 }
 
 /* Track que desliza */
