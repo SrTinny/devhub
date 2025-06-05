@@ -21,7 +21,7 @@
 /* Janela do carrossel */
 .flexCarousel {
   overflow: hidden;
-  width: 100%;
+  width: calc(395px * 3);
 }
 
 /* Track que desliza */
@@ -29,6 +29,10 @@
   display: flex;
   gap: 20px;
   transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.carousel::after {
+  content: "";
+  flex: 0 0 calc(100% - (visibleCount * (375px + 20px)));
 }
 
 /* ============================= */

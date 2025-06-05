@@ -11,38 +11,26 @@ const projetos = [
   },
   {
     titulo: "ViaTopic",
-    imagem: "/assets/test1.png",
+    imagem: "/assets/test2.png",
     descricao:
       "Projeto desenvolvido para Auxiliar a população de Sobral e região a ter acesso a informação de forma acessivel.",
     link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
-    imagem: "/assets/test1.png",
+    imagem: "/assets/test3.png",
     descricao: "Exemplo de Descrição.",
     link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
-    imagem: "/assets/test1.png",
+    imagem: "/assets/test4.png",
     descricao: "Exemplo de Descrição.",
     link: "https://meusite.com/portfolio",
   },
   {
     titulo: "Site Portfólio",
-    imagem: "/assets/test1.png",
-    descricao: "Exemplo de Descrição.",
-    link: "https://meusite.com/portfolio",
-  },
-  {
-    titulo: "Site Portfólio",
-    imagem: "/assets/test1.png",
-    descricao: "Exemplo de Descrição.",
-    link: "https://meusite.com/portfolio",
-  },
-  {
-    titulo: "Site Portfólio",
-    imagem: "/assets/test1.png",
+    imagem: "/assets/test5.png",
     descricao: "Exemplo de Descrição.",
     link: "https://meusite.com/portfolio",
   },
