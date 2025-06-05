@@ -68,7 +68,9 @@
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   text-align: center;
-
+}
+.projectDetails {
+  width: 80%;
   h2 {
     margin-bottom: 20px;
   }

@@ -145,7 +145,7 @@ export default function CarrosselProjetos() {
                   }}
                 >
                   <div className={styles.overlay}>
-                    <div>
+                    <div className={styles.projectDetails}>
                       <h2>{projeto.titulo}</h2>
                       <p>{projeto.descricao}</p>
                     </div>
