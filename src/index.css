@@ -32,3 +32,13 @@ h2 {
     color: var(--primary);
   }
 }
+
+section {
+  scroll-margin-top: 72px; /* default para mobile */
+}
+
+@media (min-width: 768px) {
+  section {
+    scroll-margin-top: 120px; /* ajustado para header maior em desktop */
+  }
+}
