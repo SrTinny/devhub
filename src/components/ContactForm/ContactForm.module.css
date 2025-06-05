@@ -5,7 +5,7 @@
 }
 
 .contact h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 1.5rem;
 }
 
@@ -16,7 +16,6 @@ form {
   flex-direction: column;
   gap: 1rem;
 }
-
 
 .submitForm {
   background-color: var(--primary);
