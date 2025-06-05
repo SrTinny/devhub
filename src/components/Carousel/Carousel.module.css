@@ -108,9 +108,17 @@
 /* ============================= */
 /*  Media Query para Mobile (<768px) */
 /* ============================= */
+/* ============================= */
+/*  Media Query para Mobile (<768px) */
+/* ============================= */
 @media (max-width: 768px) {
   .imgPort {
-    max-width: 100%;
+    width: 100%; /* ocupa toda a largura do contêiner */
+    /* calcula a altura mantendo a proporção original de 375×460 */
+    aspect-ratio: 375 / 460;
+    height: 430px; /* altura ajustada pela aspect-ratio */
     flex-shrink: 0;
+    background-size: cover; /* mostra a imagem inteira sem cortar */
+    background-position: center; /* centraliza a imagem */
   }
 }
