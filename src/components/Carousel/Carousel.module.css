@@ -113,14 +113,16 @@
 /* ============================= */
 @media (max-width: 768px) {
   .flexCarousel {
-    align-self: center;
+    width: 358px;
+    margin: 0 auto;
+    overflow: hidden;
   }
   .imgPort {
     width: 358px;
     aspect-ratio: 375 / 460;
-    height: 430px; 
+    height: 430px;
     flex-shrink: 0;
-    background-size: cover; 
-    background-position: center; 
+    background-size: cover;
+    background-position: center;
   }
 }
