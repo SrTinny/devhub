@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { Swiper as SwiperClass } from "swiper";
@@ -36,7 +36,6 @@ const projetos = [
 
 export default function CarrosselProjetos() {
   const swiperRef = useRef<SwiperClass | null>(null);
-  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <section className={styles.portfolioSection} id="portfolio">
@@ -46,14 +45,8 @@ export default function CarrosselProjetos() {
 
       <div
         className={styles.interface}
-        onMouseEnter={() => {
-          setIsHovered(true);
-          swiperRef.current?.autoplay?.stop();
-        }}
-        onMouseLeave={() => {
-          setIsHovered(false);
-          swiperRef.current?.autoplay?.start();
-        }}
+        onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
+        onMouseLeave={() => swiperRef.current?.autoplay?.start()}
       >
         {/* Setas personalizadas */}
         <button
