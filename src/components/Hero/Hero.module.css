@@ -204,6 +204,7 @@
   .buttons {
     flex-direction: row;
     justify-content: flex-start;
+    justify-self: flex-start;
   }
   .image {
     display: flex;
