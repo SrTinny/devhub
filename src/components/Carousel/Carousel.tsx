@@ -35,7 +35,7 @@ const projetos = [
 ];
 
 export default function CarrosselProjetos() {
-  const swiperRef = useRef<SwiperClass>();
+  const swiperRef = useRef<SwiperClass | null>(null);
   const [isHovered, setIsHovered] = useState(false);
 
   return (
