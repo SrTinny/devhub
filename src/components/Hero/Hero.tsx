@@ -24,7 +24,7 @@ function Hero() {
         <div className={styles.buttons}>
           <a href="#contato">Fale Conosco</a>
 
-          <a className={styles.secondary} href="#projetos">
+          <a className={styles.secondary} href="#portfolio">
             Ver Portfólio
           </a>
         </div>
