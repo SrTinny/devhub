@@ -1,11 +1,10 @@
 .portfolioSection {
   position: relative;
   padding: 40px 4%;
-  max-width: 100%;
   margin: 36px auto;
-  box-shadow: 0 0 20px 5px #2985c8;
   background-color: #000;
   color: #fff;
+  box-shadow: 0 0 20px 5px #2985c8;
 }
 
 .titulo {
@@ -18,94 +17,79 @@
   position: relative;
 }
 
-/* Janela do carrossel */
-.flexCarousel {
-  overflow: hidden;
-  width: calc(395px * 3);
-  justify-self: center;
-}
-
-/* Track que desliza */
 .carousel {
-  display: flex;
-  gap: 20px;
-  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+  padding-bottom: 40px;
 }
-.carousel::after {
-  content: "";
-  flex: 0 0 calc(100% - (visibleCount * (375px + 20px)));
-}
-
-/* ============================= */
-/*  ******** DESKTOP ********    */
-/* ============================= */
 
 .imgPort {
-  /* Largura fixa em 375px + gap de 20px no desktop */
-  width: 375px;
+  width: 100%;
   height: 460px;
   background-size: cover;
   background-position: center;
   border-radius: 40px;
   cursor: pointer;
-  transition: background-position 0.8s ease-in-out;
   position: relative;
+  transition: background-position 0.8s ease-in-out;
+  flex-shrink: 0;
 }
 
 .imgPort:hover {
   background-position: 100% 100%;
 }
 
-/* Overlay com título */
 .overlay {
+  position: absolute;
   top: 0;
   left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 40px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 24px;
-  font-weight: 600;
-  color: #fff;
+  align-items: center;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  color: white;
   text-align: center;
-}
-.projectDetails {
-  width: 80%;
-  h2 {
-    margin-bottom: 20px;
-  }
-  p {
-    text-decoration: none;
-    font-size: 16px;
-    line-height: 1.5rem;
-  }
 }
 
 .imgPort:hover .overlay {
   opacity: 1;
 }
 
-/* Setas */
+.projectDetails {
+  width: 60%;
+}
+
+.projectDetails h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.projectDetails p {
+  font-size: 16px;
+  line-height: 1.5rem;
+  margin: 0;
+}
+
+/* Setas personalizadas */
 .arrowLeft,
 .arrowRight {
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   top: 50%;
   font-size: 2rem;
   width: 40px;
   height: 40px;
   text-align: center;
-  color: var(--primary-color);
+  color: var(--primary);
   cursor: pointer;
   border: 2px solid var(--primary);
   border-radius: 50%;
   background-color: #111;
   transition: transform 0.3s ease-in-out;
+  transform: translateY(-50%);
 }
 
 .arrowLeft {
@@ -118,28 +102,6 @@
 
 .arrowLeft:hover,
 .arrowRight:hover {
-  transform: scale(1.1);
+  transform: translateY(-50%) scale(1.1);
   box-shadow: 0 0 10px var(--primary-hover);
-}
-
-/* ============================= */
-/*  Media Query para Mobile (<768px) */
-/* ============================= */
-/* ============================= */
-/*  Media Query para Mobile (<768px) */
-/* ============================= */
-@media (max-width: 768px) {
-  .flexCarousel {
-    width: 358px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  .imgPort {
-    width: 358px;
-    aspect-ratio: 375 / 460;
-    height: 430px;
-    flex-shrink: 0;
-    background-size: cover;
-    background-position: center;
-  }
 }
