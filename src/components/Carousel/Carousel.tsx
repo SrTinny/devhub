@@ -8,29 +8,29 @@ import styles from "./Carousel.module.css";
 const projetos = [
   {
     titulo: "iFestify",
-    imagem: "/assets/test1.png",
+    imagem: "/assets/ifestify.png",
     descricao:
       "Projeto desenvolvido sobre demanda para apresentação de um produto.",
-    link: "https://meusite.com/portfolio",
+    link: "https://www.ifestify.com/",
   },
   {
     titulo: "ViaTopic",
-    imagem: "/assets/test2.png",
+    imagem: "/assets/viatopic.png",
     descricao:
       "Projeto desenvolvido para auxiliar a população de Sobral e região.",
-    link: "https://meusite.com/portfolio",
+    link: "https://viatopic.netlify.app/",
   },
   {
-    titulo: "Site Portfólio",
-    imagem: "/assets/test3.png",
-    descricao: "Exemplo de Descrição.",
-    link: "https://meusite.com/portfolio",
+    titulo: "Portifólio",
+    imagem: "/assets/portifolio.png",
+    descricao: "Modelo de porfifólio interativo.",
+    link: "https://portifolio-self-ten-43.vercel.app/",
   },
   {
-    titulo: "Site Portfólio",
-    imagem: "/assets/test4.png",
-    descricao: "Exemplo de Descrição.",
-    link: "https://meusite.com/portfolio",
+    titulo: "Imovi",
+    imagem: "/assets/imovi.png",
+    descricao: "Site de alugel e venda de imóveis.",
+    link: "https://bootstrap-modelo.vercel.app/",
   },
 ];
 

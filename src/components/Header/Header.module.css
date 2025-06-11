@@ -125,7 +125,7 @@
 } /* Estilos para telas maiores (desktop) */
 @media (min-width: 768px) {
   .header {
-    padding: 2rem 10rem;
+    padding: 1rem 6rem;
     position: sticky;
   }
 
