@@ -1,0 +1,135 @@
+.benefits {
+  padding: var(--space-3xl) var(--space-lg);
+  background: var(--bg);
+  border-top: 1px solid rgba(0, 128, 255, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  animation: fadeSlideUp 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.header h2 {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-lg);
+}
+
+.header h2 span {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  font-weight: var(--fw-bold);
+}
+
+.header p {
+  font-size: var(--text-xl);
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: var(--lh-loose);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-2xl);
+}
+
+.card {
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, rgba(0, 128, 255, 0.1) 0%, rgba(157, 0, 255, 0.08) 100%);
+  border: 1px solid rgba(0, 128, 255, 0.2);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: all var(--duration-base) var(--easing-ease);
+  animation: fadeSlideUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.card:nth-child(1) { animation-delay: 0.3s; }
+.card:nth-child(2) { animation-delay: 0.35s; }
+.card:nth-child(3) { animation-delay: 0.4s; }
+.card:nth-child(4) { animation-delay: 0.45s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.55s; }
+
+.card:hover {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, rgba(0, 128, 255, 0.1) 0%, rgba(157, 0, 255, 0.1) 100%);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 128, 255, 0.15);
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-lg);
+  display: inline-block;
+  animation: bounce 2s ease-in-out infinite;
+  color: var(--primary);
+  width: 48px;
+  height: 48px;
+}
+
+.card:hover .icon {
+  animation: bounceGlow 0.6s ease forwards;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes bounceGlow {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); filter: drop-shadow(0 0 8px rgba(0, 128, 255, 0.8)); }
+  100% { transform: scale(1.1); filter: drop-shadow(0 0 4px var(--primary)); }
+}
+
+.card h3 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-md);
+  color: var(--text);
+  font-weight: var(--fw-bold);
+}
+
+.card p {
+  color: var(--text-light);
+  font-size: var(--text-base);
+  line-height: var(--lh-loose);
+  margin: 0;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .benefits {
+    padding: var(--space-3xl) var(--space-3xl);
+  }
+
+  .header h2 {
+    font-size: 3rem;
+  }
+}
