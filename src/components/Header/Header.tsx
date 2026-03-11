@@ -9,9 +9,12 @@ import {
 } from "react-icons/fi";
 
 import styles from "./Header.module.css";
+import Modal from "../Modal/Modal";
+import ContactForm from "../ContactForm/ContactForm";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
@@ -26,12 +29,18 @@ function Header() {
         </a>
       </div>
 
-      <nav className={styles.navDesktop}>
+      <nav className={styles.navDesktop} aria-label="Navegação principal">
         <a href="#">
           <FiHome /> Início
         </a>
+        <a href="#beneficios">
+          <FiSettings /> Por que escolher
+        </a>
         <a href="#servicos">
           <FiSettings /> Serviços
+        </a>
+        <a href="#archviz">
+          <FiGrid /> Archviz
         </a>
         <a href="#portfolio">
           <FiGrid /> Projetos
@@ -39,29 +48,44 @@ function Header() {
         <a href="#contato">
           <FiPhone /> Contato
         </a>
+        <button
+          type="button"
+          className={styles.cta}
+          onClick={() => setIsQuoteOpen(true)}
+        >
+          Solicitar orçamento
+        </button>
       </nav>
 
       <button
         className={styles.menuButton}
         onClick={toggleMenu}
         aria-label="Abrir menu"
+        aria-expanded={isOpen}
       >
         <FiMenu />
       </button>
 
-      <div className={`${styles.mobileMenu} ${isOpen ? styles.open : ""}`}>
+      <div className={`${styles.mobileMenu} ${isOpen ? styles.open : ""}`} role="navigation" aria-label="Menu mobile">
         <button
           className={styles.closeButton}
           onClick={closeMenu}
           aria-label="Fechar menu"
+          type="button"
         >
           <FiX />
         </button>
         <a href="#" onClick={closeMenu}>
           <FiHome /> Início
         </a>
+        <a href="#beneficios" onClick={closeMenu}>
+          <FiSettings /> Por que escolher
+        </a>
         <a href="#servicos" onClick={closeMenu}>
           <FiSettings /> Serviços
+        </a>
+        <a href="#archviz" onClick={closeMenu}>
+          <FiGrid /> Archviz
         </a>
         <a href="#portfolio" onClick={closeMenu}>
           <FiGrid /> Projetos
@@ -69,9 +93,22 @@ function Header() {
         <a href="#contato" onClick={closeMenu}>
           <FiPhone /> Contato
         </a>
+        <button
+          className={styles.cta}
+          onClick={() => {
+            setIsQuoteOpen(true);
+            closeMenu();
+          }}
+        >
+          Solicitar orçamento
+        </button>
       </div>
 
       {isOpen && <div className={styles.overlay} onClick={closeMenu}></div>}
+
+      <Modal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)}>
+        <ContactForm />
+      </Modal>
     </header>
   );
 }

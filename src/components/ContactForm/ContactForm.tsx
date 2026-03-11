@@ -135,7 +135,7 @@ const ContactForm: React.FC = () => {
         Entre em <span>Contato</span>
       </h2>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} aria-label="Formulário de contato">
         <Input
           label="Nome"
           placeholder="Seu Nome"
@@ -183,6 +183,8 @@ const ContactForm: React.FC = () => {
             className={styles.submitForm}
             type="submit"
             disabled={isSubmitting}
+            aria-busy={isSubmitting}
+            aria-label={isSubmitting ? "Enviando formulário" : "Enviar pedido"}
           >
             {isSubmitting ? "Enviando..." : "Enviar Pedido"}
           </button>

@@ -2,47 +2,75 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: var(--space-sm) var(--space-md);
   position: sticky;
   top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  z-index: var(--z-header);
+  
+  /* Efeito glassmorphism premium */
+  background: rgba(34, 38, 43, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 128, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  font-weight: bold;
+  font-weight: var(--fw-bold);
   cursor: pointer;
   user-select: none;
+}
 
-  a {
-    text-decoration: none;
-  }
-  h1 {
-    color: white;
-    font-size: 2rem;
-  }
+.logo a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  color: var(--text);
+  font-size: var(--text-4xl);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.02em;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .logoFlip {
   display: inline-block;
-  padding: 0.2rem 0.5rem;
-  color: var(--primary); /* texto azul */
-  border-radius: 6px;
-  background-color: transparent;
-  transition: all 0.4s ease;
+  padding: var(--space-xs) var(--space-md);
+  margin-left: var(--space-sm);
+  border-radius: var(--radius-md);
+  background: var(--gradient);
+  color: var(--text-black);
+  transition: all var(--duration-base) var(--easing-ease);
   transform-origin: center;
-  transform: rotateX(360deg);
+  position: relative;
+  font-weight: var(--fw-bold);
+  animation: rotateHub 6s linear infinite;
 }
 
-/* Efeito de hover suave sem sumir */
+@keyframes rotateHub {
+  0%, 100% {
+    background: linear-gradient(135deg, #0080FF, #9D00FF);
+    box-shadow: 0 4px 15px rgba(0, 128, 255, 0.3);
+  }
+  50% {
+    background: linear-gradient(315deg, #0080FF, #9D00FF);
+    box-shadow: 0 4px 15px rgba(157, 0, 255, 0.3);
+  }
+}
+
+/* Efeito de hover premium */
 .logo:hover .logoFlip {
-  background-color: var(--primary);
-  color: #000;
-  transform: rotateX(0deg);
-  transition: all 0.4s ease;
+  background: var(--gradient);
+  color: var(--text-black);
+  transform: scale(1.05) rotateX(0deg);
+  box-shadow: 0 8px 20px rgba(0, 128, 255, 0.4);
 }
 
 /* Nav Desktop (inicialmente escondido) */
@@ -50,21 +78,64 @@
   display: none;
 }
 
+/* Botão CTA - Solicitar Orçamento */
+.cta {
+  background: var(--gradient);
+  color: var(--text);
+  border: none;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition: all var(--duration-base) var(--easing-ease);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 128, 255, 0.3);
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left var(--duration-base) var(--easing-ease);
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 128, 255, 0.5);
+}
+
+.cta:hover::before {
+  left: 100%;
+}
+
+.cta:active {
+  transform: translateY(0);
+}
+
 /* Botão do menu hamburguer (mobile) */
 .menuButton {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   cursor: pointer;
   color: var(--text);
-  width: 39px;
-  height: 39px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  transition: all var(--duration-base) var(--easing-ease);
 }
 
-.menuButton svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+.menuButton:hover {
+  background: rgba(0, 128, 255, 0.1);
+  color: var(--primary);
 }
 
 /* Menu Mobile */
@@ -73,16 +144,17 @@
   top: 0;
   left: -100%;
   width: 100vw;
-  /*max-width: 300px;*/
   height: 100vh;
-  background: var(--primary); /* TODO: mudar isso */
-  line-height: 1;
-  padding: 2rem;
+  background: linear-gradient(135deg, rgba(0, 128, 255, 0.95), rgba(157, 0, 255, 0.95));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: var(--space-xl);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  transition: left 0.3s ease-in-out;
-  z-index: 1001;
+  gap: var(--space-lg);
+  transition: left var(--duration-base) var(--easing-ease-in-out);
+  z-index: var(--z-menu);
+  overflow-y: auto;
 }
 
 .mobileMenu.open {
@@ -92,78 +164,146 @@
 .mobileMenu a {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  justify-content: center;
-  margin: 2rem;
-  color: var(--text); /* TODO: mudar isso */
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--space-md);
+  color: var(--text);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1.25rem;
-  transition: color 0.3s;
+  font-weight: var(--fw-semibold);
+  font-size: var(--text-lg);
+  border-radius: var(--radius-md);
+  transition: all var(--duration-base) var(--easing-ease);
+  position: relative;
+}
+
+.mobileMenu a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 0;
+  background: var(--text);
+  border-radius: 2px;
+  transition: height var(--duration-base) var(--easing-ease);
 }
 
 .mobileMenu a:hover {
-  color: var(--primary);
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(var(--space-sm));
+}
+
+.mobileMenu a:hover::before {
+  height: 24px;
+}
+
+.mobileMenu svg {
+  width: 24px;
+  height: 24px;
 }
 
 /* Botão de fechar */
 .closeButton {
   align-self: flex-end;
-  background: none;
+  background: rgba(255, 255, 255, 0.2);
   border: none;
   font-size: 2rem;
   cursor: pointer;
   color: var(--text);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-base) var(--easing-ease);
+  margin-bottom: var(--space-lg);
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
 }
 
 /* Overlay escurecido */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1000;
-} /* Estilos para telas maiores (desktop) */
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: var(--z-header);
+  animation: fadeIn var(--duration-base) var(--easing-ease);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Estilos para telas maiores (desktop) */
 @media (min-width: 768px) {
   .header {
-    padding: 1rem 6rem;
-    position: sticky;
+    padding: var(--space-sm) var(--space-2xl);
   }
 
   .navDesktop {
     display: flex;
-    gap: 3rem;
+    gap: var(--space-2xl);
+    align-items: center;
   }
+
   .navDesktop a {
     position: relative;
     display: flex;
     color: var(--text);
-    font-weight: 500;
+    font-weight: var(--fw-medium);
     text-decoration: none;
-    font-size: 1.25rem;
-    transition: color 0.3s;
+    font-size: var(--text-base);
+    transition: color var(--duration-base) var(--easing-ease);
     align-items: center;
-    padding: 3px 0;
-    gap: 0.25rem;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
+  }
+
+  .navDesktop a svg {
+    width: 18px;
+    height: 18px;
+    transition: transform var(--duration-base) var(--easing-ease);
   }
 
   .navDesktop a::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0px;
+    bottom: -4px;
     width: 0%;
-    height: 2px;
-    background-color: var(--primary);
-    transition: width 0.3s ease;
+    height: 3px;
+    background: var(--gradient);
+    border-radius: 2px;
+    transition: width var(--duration-base) var(--easing-ease);
+  }
+
+  .navDesktop a:hover {
+    color: var(--primary);
   }
 
   .navDesktop a:hover::after {
     width: 100%;
   }
-  .navDesktop a:hover {
-    color: var(--primary);
-    transition: all 0.3s ease;
+
+  .navDesktop a:hover svg {
+    transform: translateY(-2px);
   }
+
+  .navDesktop .cta {
+    margin-left: var(--space-lg);
+  }
+
   .menuButton {
     display: none;
   }

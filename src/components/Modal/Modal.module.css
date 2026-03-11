@@ -1,4 +1,4 @@
-/* src/components/Modal/Modal.module.css */
+﻿/* src/components/Modal/Modal.module.css */
 .overlay {
   position: fixed;
   top: 0;
@@ -6,16 +6,15 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(2px) brightness(0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
-
-  /* Inicia escondido */
+  z-index: var(--z-modal-overlay);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: all var(--duration-base) var(--easing-ease);
 }
 
 .overlay.active {
@@ -24,72 +23,81 @@
 }
 
 .modal {
-  background-color: var(--card-bg); /* ex.: #111 */
-  color: var(--primary-hover);
-  border-radius: 10px;
-  padding: 2rem 1rem;
+  background: linear-gradient(135deg, var(--card-bg) 0%, rgba(42, 46, 52, 0.8) 100%);
+  color: var(--text);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
   width: 90%;
-  max-width: 400px;
+  max-width: 450px;
   text-align: center;
-  border: 1px solid var(--primary);
-  z-index: 1001;
-
-  /* Inicia “abaixado” e transparente */
+  border: 1px solid rgba(0, 128, 255, 0.2);
+  z-index: var(--z-modal);
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(20px) scale(0.95);
+  transition: all var(--duration-base) var(--easing-ease);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .modal.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .modal h3 {
-  font-size: 1.5rem;
-  color: var(--primary);
-  margin: 0 0 1rem;
+  font-size: var(--text-2xl);
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 var(--space-md);
 }
 
 .modal p {
-  font-size: 1rem;
-  color: var(--text);
-  margin: 0 0 1rem;
+  font-size: var(--text-base);
+  color: var(--text-light);
+  margin: 0 0 var(--space-md);
+  line-height: var(--lh-relaxed);
 }
 
 .footer {
-  margin-top: 1.5rem;
+  margin-top: var(--space-2xl);
   display: flex;
   justify-content: center;
-  gap: 0.75rem;
+  gap: var(--space-lg);
+  padding-top: var(--space-xl);
+  border-top: 1px solid rgba(0, 128, 255, 0.1);
 }
 
 .btnCancel,
 .btnConfirm {
   flex: 1;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--text-sm);
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: background 0.2s ease;
+  font-weight: var(--fw-semibold);
+  transition: all var(--duration-base) var(--easing-ease);
 }
 
 .btnCancel {
-  background-color: var(--bg); /* fundo escuro */
+  background-color: transparent;
   color: var(--text);
-  border: 1px solid var(--text-light);
-}
-
-.btnConfirm {
-  background-color: var(--primary);
-  color: var(--text-black);
+  border: 1px solid rgba(0, 128, 255, 0.3);
 }
 
 .btnCancel:hover {
-  background-color: var(--card-bg-hover);
+  background-color: rgba(0, 128, 255, 0.1);
+  border-color: var(--primary);
+}
+
+.btnConfirm {
+  background: var(--gradient);
+  color: var(--text-black);
+  box-shadow: 0 4px 15px rgba(0, 128, 255, 0.3);
 }
 
 .btnConfirm:hover {
-  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 128, 255, 0.4);
 }

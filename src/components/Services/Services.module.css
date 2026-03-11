@@ -1,31 +1,75 @@
+﻿.servicesSection {
+  background-color: var(--bg);
+  padding: var(--space-3xl) var(--space-lg);
+  text-align: center;
+}
+
+.header {
+  margin-bottom: var(--space-3xl);
+}
+
+.header h2 {
+  font-size: var(--text-4xl);
+  color: var(--text);
+  margin-bottom: var(--space-lg);
+  font-weight: var(--fw-bold);
+}
+
+.header h2 span {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  font-weight: var(--fw-bold);
+}
+
+.header p {
+  font-size: var(--text-lg);
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: var(--lh-loose);
+}
+
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  gap: var(--space-xl);
   padding: 0;
-  background-color: #000; /* fundo geral escuro */
-  border-radius: 12px;
+  background-color: var(--bg);
+  border-radius: var(--radius-lg);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
-  background-color: #111; /* fundo dos cards */
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, rgba(0, 128, 255, 0.1) 0%, rgba(157, 0, 255, 0.08) 100%);
+  padding: var(--space-xl);
+  border: 1px solid rgba(0, 128, 255, 0.2);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: all var(--duration-base) var(--easing-ease);
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  background: linear-gradient(135deg, rgba(0, 128, 255, 0.1) 0%, rgba(157, 0, 255, 0.1) 100%);
+  box-shadow: 0 15px 35px rgba(0, 128, 255, 0.15);
 }
 
 .icon {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 1rem;
-  transition: transform 0.4s ease, filter 0.4s ease;
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--space-lg);
+  transition: all var(--duration-base) var(--easing-ease);
   will-change: transform, filter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary);
 }
 
 .card:hover .icon {
@@ -34,51 +78,52 @@
 
 @keyframes bounceGlow {
   0% { transform: scale(1); filter: none; }
-  50% { transform: scale(1.2); filter: drop-shadow(0 0 8px #2985c8cc); }
-  100% { transform: scale(1.1); filter: drop-shadow(0 0 4px #2985c8); }
+  50% { transform: scale(1.15); filter: drop-shadow(0 0 12px rgba(0, 128, 255, 0.8)); }
+  100% { transform: scale(1.1); filter: drop-shadow(0 0 6px var(--primary)); }
 }
 
 .card h3 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #2985c8; /* azul vibrante para título */
-  justify-content: center;
-  height: 75px;
-  display: flex;
-  align-items: center;
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-md);
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  height: auto;
+  display: block;
 }
 
 .card p {
-  font-size: 1.2rem;
-  color: #e0e0e0; /* cinza claro para o texto */
+  font-size: var(--text-base);
+  color: var(--text-light);
+  line-height: var(--lh-loose);
 }
 
-.servicesSection {
-  background-color: #000;
-  padding: 0rem 2rem;
-  text-align: center;
+.cardLink {
+  margin-top: var(--space-lg);
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 128, 255, 0.35);
+  background: rgba(0, 128, 255, 0.12);
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: var(--fw-semibold);
+  transition: all var(--duration-base) var(--easing-ease);
 }
 
-.header {
-  margin-bottom: 3rem;
+.cardLink:hover {
+  color: var(--text);
+  border-color: var(--primary);
+  background: rgba(0, 128, 255, 0.22);
 }
 
-.header h2 {
-  font-size: 3rem;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
+@media (min-width: 768px) {
+  .servicesSection {
+    padding: var(--space-3xl) var(--space-3xl);
+  }
 
-.header p {
-  font-size: 1.1rem;
-  color: #bbb;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 768px) {
-  .services {
-    padding: 4rem 2rem;
+  .header h2 {
+    font-size: 3rem;
   }
 }
